@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="Logo">Portfolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="">Home</a>
+            <a href="#About">About</a>
+            <a href="#Skill">Skill</a>
+            <a href="#Portfolio">Portfolio</a>
+            <a href="#Contact">Contact</a>
+        </nav>
+    </header>
+    <!--home section design-->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello!, Its me</h3>
+            <h1>Aryan Singh Chauhan</h1>
+            <h3>And I'am a <span class="multiple-text"></span></h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At nemo provident deleniti suscipit consequatur
+                fuga quae quaerat!</p>
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="profile.png" alt="">
+        </div>
+    </section>
+    <!--about section design-->
+    <section class="about" id="About">
+        <!-- About section content -->
+        <section class="About" id="About">
+            <div class="About-img">
+                <img src="profile.png" alt="Neon circle avatar">
+            </div>
+            <div class="About-content">
+                <h2 class="heading">About<span> Me</span></h2>
+                <h3>Frontend Developer</h3>
+                <p>As a skilled frontend developer, I craft visually appealing and user-friendly web applications that
+                    deliver seamless user experiences. Proficient in HTML, CSS, JavaScript, and modern frameworks like
+                    React and Bootstrap. Let's build something amazing together!</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </section>
+        <!--skill section-->
+        <section class="Skill" id="Skill">
+            <h2 class="heading">My<span> Skills</span></h2>
+
+            <div class="Skill-container">
+                <div class="Skill-box">
+                    <box-icon name='code-alt'></box-icon>
+                    <h3>Technical skills</h3>
+                    <p>- Proficient in HTML & CSS for crafting responsive, well-structured web pages.
+                        Exploring Bootstrap to design mobile-first, visually appealing UI components.
+                        Learning Python for logic building, automation, and backend scripting.
+                        Familiar with debugging and enhancing interactivity using JavaScript basics.
+                    </p>
+                    <a href="#" class="btn">Read more</a>
+                </div>
+                <div class="Skill-box">
+                    <box-icon name='code-alt'></box-icon>
+                    <h3>✨ Creative & Expressive Coding</h3>
+                    <p>Passionate about transforming rough ideas into functional, aesthetic web pages.
+                        Enjoys writing neat, well-commented code that tells a clear story.
+                        Finds joy in visual design, layout balance, and user-friendly interfaces.
+                    </p>
+                    <a href="#" class="btn">Read more</a>
+                </div>
+            </div>
+        </section>
+        <!--portfolio design-->
+        <section class="Portfolio" id="Portfolio">
+            <h2 class="heading">Latest<span> Projects</span></h2>
+            <div class="Portfolio-container">
+                <div class="Portfolio-box">
+                    <img src="proj2.png" height="300" width="350" alt="">
+                    <div class="Portfolio-layer">
+                        <h4>Calculator App</h4>
+                        <p>I have made a simple calculator app using HTML, CSS, and JavaScript and some components of
+                            Bootstrap.</p>
+                        <a href="https://aryan2431737-spec.github.io/Modern-Calculator/"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="Portfolio-box">
+                    <img src="proj1.png" height="300" width="350" alt="">
+                    <div class="Portfolio-layer">
+                        <h4>!</h4>
+                        <p>project section</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="Portfolio-box">
+                    <img src="proj1.png" height="300" width="350" alt="">
+                    <div class="Portfolio-layer">
+                        <h4>!</h4>
+                        <p>project section</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--contact section-->
+        <section class="Contact" id="Contact">
+            <h2 class="heading">Contact<span>Me</span></h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Enter your name" required>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Enter your number" required>
+                    <input type="text" placeholder="email subject" required>
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </form>
+            </section>
+            <footer class="footer">
+                <div class="footer-text">
+                    <p>Copyright &copy; 2025 by Aryan | All Rights Reserved</p>
+                </div>
+                <div class="footer-iconTop">
+                    <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+                </div>
+            </footer>
+            <!--scroll reveal-->
+            <script src="https://unpkg.com/scrollreveal"></script>
+            <!--typed js-->
+            <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+            <!--custom js-->
+            <script src="script.js"></script>
+</body>
+
+</html>
