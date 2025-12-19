@@ -1,3 +1,4 @@
+/* Your Original CSS - Unchanged */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -48,4 +49,95 @@ body {
 .read-btn:hover {
   background-color: #00cfd1;
   box-shadow: 0 0 20px #00f7ff;
+}
+
+/* Extra Enhancements for a More Polished Skills Section */
+.skills-section {
+  /* Add a gradient background for depth */
+  background: linear-gradient(135deg, #1f232a, #2a2f3a);
+  /* Smooth transition for any changes */
+  transition: all 0.3s ease;
+}
+
+.skills-section h1 {
+  /* Add text shadow for a glowing effect */
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+  /* Slight animation on load */
+  animation: fadeInUp 1s ease-out;
+  /* Letter spacing for elegance */
+  letter-spacing: 1px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-box {
+  /* Enhanced background with subtle gradient */
+  background: linear-gradient(135deg, #2f3340, #3a3f4d);
+  /* Stronger shadow and transition */
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+  transition: all 0.3s ease;
+  /* Add a subtle border glow */
+  border: 1px solid rgba(0, 234, 255, 0.1);
+  /* Animation on load */
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.tech-box:hover {
+  /* Lift effect and stronger glow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 234, 255, 0.5);
+  border-color: rgba(0, 234, 255, 0.3);
+}
+
+.read-btn {
+  /* Add focus state for accessibility */
+  transition: all 0.3s ease;
+}
+
+.read-btn:hover,
+.read-btn:focus {
+  /* Scale effect and enhanced glow */
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00f7ff;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 40px 20px;
+  }
+  .skills-section h1 {
+    font-size: 36px;
+  }
+  .tech-box {
+    max-width: 90%;
+    padding: 30px;
+    font-size: 16px;
+  }
+  .read-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section h1 {
+    font-size: 28px;
+  }
+  .tech-box {
+    padding: 20px;
+    margin: 20px auto;
+  }
+  .read-btn {
+    padding: 8px 20px;
+  }
 }
