@@ -3,137 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="description" content="Portfolio of Aryan Singh Chauhan, a passionate frontend developer specializing in HTML, CSS, JavaScript, and more. Explore my projects and skills.">
+    <meta name="keywords" content="Aryan Singh Chauhan, Frontend Developer, Web Developer, Portfolio, HTML, CSS, JavaScript, React, Bootstrap">
+    <meta name="author" content="Aryan Singh Chauhan">
+    <meta property="og:title" content="Aryan Singh Chauhan - Frontend Developer Portfolio">
+    <meta property="og:description" content="Explore my projects, skills, and connect with me.">
+    <meta property="og:image" content="https://aryan2431737-spec.github.io/Portfolio/profile.png">
+    <meta property="og:url" content="https://aryan2431737-spec.github.io/Portfolio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Portfolio - Aryan Singh Chauhan</title>
     <link rel="shortcut icon" href="image.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Skip to Content for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Preloader -->
-    <div id="preloader">
+    <div id="preloader" aria-hidden="true">
         <div class="spinner"></div>
     </div>
 
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
-        <nav class="navbar">
+        <nav class="navbar" role="navigation">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#portfolio">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="theme-toggle" id="theme-toggle">
+        <div class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
             <i class='bx bx-moon'></i>
         </div>
-        <i class='bx bx-menu' id="menu-icon"></i>
+        <i class='bx bx-menu' id="menu-icon" aria-label="Toggle Menu"></i>
     </header>
 
-    <!-- Home Section -->
-    <section class="home" id="home">
-        <canvas id="particle-canvas"></canvas> <!-- For particle effect -->
-        <div class="home-content">
-            <h3>Hello!, It's me</h3>
-            <h1>Aryan Singh Chauhan</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <div class="social-media">
-                <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" aria-label="Gmail"><i class='bx bxl-gmail'></i></a>
-                <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.linkedin.com/in/aryan-singh-chauhan-a62a86324" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+    <main id="main-content">
+        <!-- Home Section -->
+        <section class="home" id="home" role="banner">
+            <canvas id="particle-canvas" aria-hidden="true"></canvas> <!-- For particle effect -->
+            <div class="home-content">
+                <h3>Hello!, It's me</h3>
+                <h1>Aryan Singh Chauhan</h1>
+                <h3>And I'm a <span class="multiple-text"></span></h3>
+                <div class="social-media">
+                    <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" aria-label="Gmail"><i class='bx bxl-gmail'></i></a>
+                    <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.linkedin.com/in/aryan-singh-chauhan-a62a86324" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                </div>
+                <a href="#" class="btn" download>Download CV</a>
             </div>
-            <a href="#" class="btn">Download CV</a>
-        </div>
-        <div class="home-img">
-            <img src="profile.png" alt="Profile Image of Aryan Singh Chauhan">
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="profile.png" alt="Neon circle avatar">
-        </div>
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Frontend Developer</h3>
-            <p>As a skilled frontend developer, I craft visually appealing and user-friendly web applications that deliver seamless user experiences. Proficient in HTML, CSS, JavaScript, and modern frameworks like React and Bootstrap. Let's build something amazing together!</p>
-            <a href="about.html" class="btn">Read More</a>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
-        <div class="skills-container">
-            <div class="skills-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Technical Skills</h3>
-                <p>- Proficient in HTML & CSS for crafting responsive, well-structured web pages.<br>
-                - Exploring Bootstrap to design mobile-first, visually appealing UI components.<br>
-                - Learning Python for logic building, automation, and backend scripting.<br>
-                - Familiar with debugging and enhancing interactivity using JavaScript basics.</p>
-                <a href="technical.html" class="btn">Read More</a>
+            <div class="home-img">
+                <img src="profile.png" alt="Profile Image of Aryan Singh Chauhan" loading="lazy">
             </div>
-            <div class="skills-box">
-                <i class='bx bx-palette'></i>
-                <h3>✨ Creative & Expressive Coding</h3>
-                <p>Passionate about transforming rough ideas into functional, aesthetic web pages.<br>
-                Enjoys writing neat, well-commented code that tells a clear story.<br>
-                Finds joy in visual design, layout balance, and user-friendly interfaces.</p>
-                <a href="creative.html" class="btn">Read More</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Projects</span></h2>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="proj2.png" alt="Calculator App Project">
-                <div class="portfolio-layer">
-                    <h4>Calculator App</h4>
-                    <p>I have made a simple calculator app using HTML, CSS, and JavaScript and some components of Bootstrap.</p>
-                    <a href="https://aryan2431737-spec.github.io/Modern-Calculator/" aria-label="View Calculator App"><i class='bx bx-link-external'></i></a>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="profile.png" alt="Neon circle avatar of Aryan Singh Chauhan" loading="lazy">
+            </div>
+            <div class="about-content">
+                <h2 class="heading">About <span>Me</span></h2>
+                <h3>Frontend Developer</h3>
+                <p>As a skilled frontend developer, I craft visually appealing and user-friendly web applications that deliver seamless user experiences. Proficient in HTML, CSS, JavaScript, and modern frameworks like React and Bootstrap. Passionate about logic-building and turning ideas into reality. Let's build something amazing together!</p>
+                <a href="about.html" class="btn">Read More</a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <h2 class="heading">My <span>Skills</span></h2>
+            <div class="skills-container">
+                <article class="skills-box">
+                    <i class='bx bx-code-alt' aria-hidden="true"></i>
+                    <h3>Technical Skills</h3>
+                    <p>- Proficient in HTML & CSS for crafting responsive, well-structured web pages.<br>
+                    - Exploring Bootstrap to design mobile-first, visually appealing UI components.<br>
+                    - Learning Python for logic building, automation, and backend scripting.<br>
+                    - Familiar with debugging and enhancing interactivity using JavaScript basics.</p>
+                    <a href="technical.html" class="btn">Read More</a>
+                </article>
+                <article class="skills-box">
+                    <i class='bx bx-palette' aria-hidden="true"></i>
+                    <h3>✨ Creative & Expressive Coding</h3>
+                    <p>Passionate about transforming rough ideas into functional, aesthetic web pages.<br>
+                    Enjoys writing neat, well-commented code that tells a clear story.<br>
+                    Finds joy in visual design, layout balance, and user-friendly interfaces.</p>
+                    <a href="creative.html" class="btn">Read More</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <h2 class="heading">Latest <span>Projects</span></h2>
+            <div class="portfolio-container">
+                <div class="portfolio-box">
+                    <img src="proj2.png" alt="Screenshot of Calculator App Project" loading="lazy">
+                    <div class="portfolio-layer">
+                        <h4>Calculator App</h4>
+                        <p>I have made a simple calculator app using HTML, CSS, and JavaScript and some components of Bootstrap.</p>
+                        <a href="https://aryan2431737-spec.github.io/Modern-Calculator/" aria-label="View Calculator App"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-box">
+                    <img src="proj.2img.jpg" alt="Screenshot of EduMathSolver Project" loading="lazy">
+                    <div class="portfolio-layer">
+                        <h4>EduMathSolver</h4>
+                        <p>An educational math solver tool built with web technologies.</p>
+                        <a href="https://aryan2431737-spec.github.io/EduMathSolver/" aria-label="View EduMathSolver"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-box">
+                    <img src="proj1.png" alt="Screenshot of Another Project" loading="lazy">
+                    <div class="portfolio-layer">
+                        <h4>Project Title</h4>
+                        <p>Description of the project.</p>
+                        <a href="#" aria-label="View Project"><i class='bx bx-link-external'></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="portfolio-box">
-                <img src="proj.2img.jpg" alt="EduMathSolver Project">
-                <div class="portfolio-layer">
-                    <h4>EduMathSolver</h4>
-                    <p>An educational math solver tool built with web technologies.</p>
-                    <a href="https://aryan2431737-spec.github.io/EduMathSolver/" aria-label="View EduMathSolver"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="proj1.png" alt="Another Project">
-                <div class="portfolio-layer">
-                    <h4>Project Title</h4>
-                    <p>Description of the project.</p>
-                    <a href="#" aria-label="View Project"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-        <form id="contact-form">
-            <div class="input-box">
-                <input type="text" id="name" placeholder="Enter your name" required>
-                <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="input-box">
-                <input type="tel" id="phone" placeholder="Enter your number" required>
-                <input type="text" id="subject" placeholder="Email subject" required>
-            </div>
-            <textarea id="message" cols="30" rows="10" placeholder="Enter your message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-            <div id="form-message"></div>
-        </form>
-    </section>
+        <!-- Fun Fact Section (New Addition for Engagement) -->
+        <section class="fun-fact" id="fun-fact">
+            <h2 class="heading">Fun <span>Fact</span></h2>
+            <p>Did you know? I started coding by building simple calculators and now create full-fledged web apps. Fun fact: I love debugging as much as I love coffee! ☕</p>
+            <img src="https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif" alt="Coding Fun GIF" loading="lazy" style="max-width: 300px; border-radius: 10px;">
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me</span></h2>
+            <form id="contact-form" action="#" method="post">
+                <div class="input-box">
+                    <input type="text" id="name" placeholder="Enter your name" required aria-label="Name">
+                    <input type="email" id="email" placeholder="Enter your email" required aria-label="Email">
+                </div>
+                <div class="input-box">
+                    <input type="tel" id="phone" placeholder="Enter your number" required aria-label="Phone">
+                    <input type="text" id="subject" placeholder="Email subject" required aria-label="Subject">
+                </div>
+                <textarea id="message" cols="30" rows="10" placeholder="Enter your message" required aria-label="Message"></textarea>
+                <button type="submit" class="btn">Send Message</button>
+                <div id="form-message" aria-live="polite"></div>
+            </form>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -146,7 +166,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top" id="back-to-top">
+    <div class="back-to-top" id="back-to-top" aria-label="Scroll to Top">
         <i class='bx bx-up-arrow-alt'></i>
     </div>
 
