@@ -16,6 +16,7 @@
     --second-bg-color: #323946;
     --text-color: #fff;
     --main-color: #0ef;
+    --hover-color: #00d4ff;
 }
 
 html {
@@ -26,11 +27,13 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    transition: background 0.5s ease;
 }
 
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
+    transition: all 0.5s ease;
 }
 
 .header {
@@ -44,10 +47,12 @@ section {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header.sticky {
     border-bottom: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 0 1rem rgba(0, 238, 255, 0.3);
 }
 
 .Logo {
@@ -55,35 +60,83 @@ section {
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Logo:hover {
+    color: var(--main-color);
+    transform: scale(1.05);
 }
 
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
     margin-left: 4rem;
-    transition: .3s;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 0;
+    height: 0.2rem;
+    background: var(--main-color);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::before,
+.navbar a.active::before {
+    width: 100%;
 }
 
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
+    transform: translateY(-0.2rem);
 }
 
 #menu-icon {
     font-size: 3.6rem;
     color: var(--text-color);
     display: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#menu-icon:hover {
+    color: var(--main-color);
+    transform: rotate(90deg);
 }
 
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .home-img img {
     width: 35vw;
     animation: floatImage 4s ease-in-out infinite;
+    transition: transform 0.5s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.05) translateY(-1rem);
 }
 
 @keyframes floatImage {
@@ -101,6 +154,18 @@ section {
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: 700;
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .home-content h3:nth-of-type(2) {
@@ -109,16 +174,39 @@ section {
 
 span {
     color: var(--main-color);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px var(--main-color);
+    }
+    to {
+        text-shadow: 0 0 20px var(--main-color), 0 0 30px var(--main-color);
+    }
 }
 
 .home-content h1 {
     font-size: 5.6rem;
     font-weight: 700;
     line-height: 1.3;
+    animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .home-content p {
     font-size: 1.6rem;
+    animation: fadeIn 1.5s ease-out;
 }
 
 .social-media a {
@@ -133,13 +221,30 @@ span {
     font-size: 2rem;
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
-    transition: .5s ease;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-media a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--main-color);
+    transition: left 0.5s ease;
+}
+
+.social-media a:hover::before {
+    left: 0;
 }
 
 .social-media a:hover {
-    background: var(--main-color);
     color: var(--second-bg-color);
     box-shadow: 0 0 1rem var(--main-color);
+    transform: rotate(360deg);
 }
 
 .btn {
@@ -152,11 +257,29 @@ span {
     color: var(--second-bg-color);
     letter-spacing: .1rem;
     font-weight: 600;
-    transition: .5s ease;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover {
     box-shadow: none;
+    transform: scale(1.1);
 }
 
 .About {
@@ -165,15 +288,33 @@ span {
     align-items: center;
     gap: 2rem;
     background: var(--second-bg-color);
+    animation: fadeInUp 1s ease-out;
 }
 
 .About-img img {
     width: 35vw;
+    transition: transform 0.5s ease;
+}
+
+.About-img img:hover {
+    transform: scale(1.05) rotate(5deg);
 }
 
 .heading {
     text-align: center;
     font-size: 4.5rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .About-content h2 {
@@ -183,11 +324,21 @@ span {
 
 .About-content h3 {
     font-size: 2.6rem;
+    transition: color 0.3s ease;
+}
+
+.About-content h3:hover {
+    color: var(--main-color);
 }
 
 .About-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    transition: color 0.3s ease;
+}
+
+.About-content p:hover {
+    color: var(--hover-color);
 }
 
 .Skill h2 {
@@ -209,22 +360,50 @@ span {
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--bg-color);
-    transition: .5s ease;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.Skill-container .Skill-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 238, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.Skill-container .Skill-box:hover::before {
+    left: 100%;
 }
 
 .Skill-container .Skill-box:hover {
     border-color: var(--main-color);
-    transform: scale(1.02);
+    transform: scale(1.05) translateY(-1rem);
+    box-shadow: 0 1rem 2rem rgba(0, 238, 255, 0.3);
 }
 
 .Skill-box h3 {
     font-size: 4rem;
     color: var(--main-color);
+    transition: color 0.3s ease;
+}
+
+.Skill-box h3:hover {
+    color: var(--hover-color);
 }
 
 .Skill-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
+    transition: color 0.3s ease;
+}
+
+.Skill-box p:hover {
+    color: var(--hover-color);
 }
 
 .Portfolio {
@@ -248,11 +427,17 @@ span {
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    transition: all 0.5s ease;
+}
+
+.Portfolio-box:hover {
+    box-shadow: 0 0 2rem var(--main-color);
+    transform: translateY(-1rem);
 }
 
 .Portfolio-box img {
     width: 100%;
-    transition: .5s ease;
+    transition: transform 0.5s ease;
 }
 
 .Portfolio-box:hover img {
@@ -273,7 +458,7 @@ span {
     text-align: center;
     padding: 0 4rem;
     transform: translateY(100%);
-    transition: .5s ease;
+    transition: transform 0.5s ease;
 }
 
 .Portfolio-box:hover .Portfolio-layer {
@@ -282,11 +467,21 @@ span {
 
 .Portfolio-layer h4 {
     font-size: 3rem;
+    transition: color 0.3s ease;
+}
+
+.Portfolio-layer h4:hover {
+    color: var(--hover-color);
 }
 
 .Portfolio-layer p {
     font-size: 1.6rem;
     margin: .3rem 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.Portfolio-layer p:hover {
+    color: var(--hover-color);
 }
 
 .Portfolio-layer a {
@@ -297,11 +492,22 @@ span {
     height: 5rem;
     background: var(--text-color);
     border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.Portfolio-layer a:hover {
+    background: var(--main-color);
+    transform: scale(1.2) rotate(360deg);
 }
 
 .Portfolio-layer a i {
     font-size: 2rem;
     color: var(--second-bg-color);
+    transition: color 0.3s ease;
+}
+
+.Portfolio-layer a:hover i {
+    color: var(--text-color);
 }
 
 .Contact h2 {
@@ -330,6 +536,14 @@ span {
     background: var(--second-bg-color);
     border-radius: .8rem;
     margin: .7rem 0;
+    transition: all 0.3s ease;
+}
+
+.Contact form .input-box input:focus,
+.Contact form textarea:focus {
+    border: 0.2rem solid var(--main-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    transform: scale(1.02);
 }
 
 .Contact form .input-box input {
@@ -343,6 +557,11 @@ span {
 .Contact form button {
     margin-top: 2rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Contact form button:hover {
+    transform: scale(1.05);
 }
 
 .footer {
@@ -352,10 +571,16 @@ span {
     flex-wrap: wrap;
     padding: 2rem 9%;
     background: var(--second-bg-color);
+    transition: background 0.3s ease;
 }
 
 .footer-text p {
     font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.footer-text p:hover {
+    color: var(--main-color);
 }
 
 .footer-iconTop a {
@@ -365,16 +590,40 @@ span {
     padding: .8rem;
     background: var(--main-color);
     border-radius: .8rem;
-    transition: .5s ease;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.footer-iconTop a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: .8rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.footer-iconTop a:hover::before {
+    opacity: 1;
 }
 
 .footer-iconTop a:hover {
     box-shadow: 0 0 1rem var(--main-color);
+    transform: translateY(-0.5rem);
 }
 
 .footer-iconTop a i {
     font-size: 2.4rem;
     color: var(--second-bg-color);
+    transition: transform 0.3s ease;
+}
+
+.footer-iconTop a:hover i {
+    transform: rotate(360deg);
 }
 
 /* breakpoints */
@@ -419,14 +668,26 @@ span {
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         display: none;
+        animation: slideDown 0.5s ease;
     }
     .navbar.active {
         display: block;
+    }
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-2rem);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     .navbar a {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+        animation: fadeIn 0.5s ease;
     }
     .home {
         flex-direction: column;
@@ -478,14 +739,4 @@ span {
     .home-img img {
         width: 90vw;
     }
-    .About-img img {
-        width: 90vw;
-    }
-    .footer {
-        flex-direction: column-reverse;
-    }
-    .footer p {
-        text-align: center;
-        margin-top: 2rem;
-    }
-}
+    .About-img img
